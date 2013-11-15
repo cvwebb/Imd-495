@@ -1,0 +1,29 @@
+.section{
+	width:100%;
+	float:left;}
+
+.fl{
+	float:left;}
+
+.fr{
+	float:right;}
+
+.pct-half{
+	width:45%;
+	}
+
+.pct-half img{
+	width:100%%;
+	}
+	
+.pct-third{
+	width:28%;
+	}
+
+.p5{
+	padding-right:8%;}
+
+.pct-third img{
+	width:100%;
+	}
+
