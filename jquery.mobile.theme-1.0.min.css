@@ -252,8 +252,8 @@
 }
 .ui-body-c, .ui-dialog.ui-overlay-c {
 	border: 1px solid #b3b3b3;
-	color: #fff;
-	text-shadow: 0 1px 0 #333;
+	color: #333;
+	text-shadow: 0 1px 0 #ccc;
 	background: #f0f0f0;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
 	background-image: -webkit-linear-gradient(#eee, #ddd);
@@ -664,9 +664,9 @@ a.ui-link-inherit {
 	cursor: default
 }
 .ui-icon, .ui-icon-searchfield:after {
-	background: #666;
-	background: rgba(0,0,0,.4);
-	background-image: url(images/icons-18-white.png);
+	/* background: #666;
+	background: rgba(0,0,0,.4);*/
+	background-image: url(images/icons-36-white.png);
 	background-repeat: no-repeat;
 	-moz-border-radius: 9px;
 	-webkit-border-radius: 9px;
@@ -675,7 +675,7 @@ a.ui-link-inherit {
 .ui-icon-alt {
 	background: #fff;
 	background: rgba(255,255,255,.3);
-	background-image: url(images/icons-18-black.png);
+	background-image: url(images/icons-36-black.png);
 	background-repeat: no-repeat
 }
 @media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (min-resolution:240dpi) {
@@ -741,6 +741,29 @@ a.ui-link-inherit {
 .ui-icon-home {
 	background-position: -576px 50%
 }
+
+/* New Icons */
+
+.ui-icon-home-app {
+	background-position: -1506px 50%
+}
+
+.ui-icon-activities {
+	background-position: -1563px 50%
+}
+
+.ui-icon-teachers {
+	background-position: -1626px 50%
+}
+
+.ui-icon-principal {
+	background-position: -1692px 50%
+}
+
+.ui-icon-school {
+	background-position: -1745px 50%
+}
+
 .ui-icon-search, .ui-icon-searchfield:after {
 	background-position: -612px 50%
 }
@@ -866,11 +889,11 @@ a.ui-link-inherit {
 	-webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
 	box-shadow: inset 0 1px 4px rgba(0,0,0,.2)
 }
-.ui-icon-shadow {
+/*.ui-icon-shadow {
 	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.4);
 	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.4);
 	box-shadow: 0 1px 0 rgba(255,255,255,.4)
-}
+}*/
 .ui-focus {
 	-moz-box-shadow: 0 0 12px #387bbe;
 	-webkit-box-shadow: 0 0 12px #387bbe;
