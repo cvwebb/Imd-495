@@ -6,6 +6,8 @@ function setFeed(loca) {
 	var theExcerpt = "";
 	var theString = "";
 	var feedJSON2;
+	var loader = "<div><img src='images/ajax-loader.png' width='35' height='35' alt='loading...'/></div>";
+	document.getElementById(idFeed).innerHTML = loader;
 	$.ajax( { 
 		url: params, 
 		crossDomain: true,
@@ -35,9 +37,11 @@ function setFeed(loca) {
 				document.getElementById(idFeed).innerHTML = theHTml;				
 			}
 			catch (e) {
-				alert(e.message);	
+				
 			}
 		} 
 	});
+	
+	
 }
 
