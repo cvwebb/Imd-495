@@ -6,8 +6,11 @@ function setFeed(loca) {
 	var theExcerpt = "";
 	var theString = "";
 	var feedJSON2;
+	var loader = "<div><img src='images/ajax-loader.png' width='35' height='35' alt='loading...'/></div>";
+	document.getElementById(idFeed).innerHTML = loader;
 	$.ajax( { 
 		url: params, 
+		crossDomain: true,
 		success: function(result) { 
 			try {
 				feedJSON2 = result; 
@@ -26,7 +29,7 @@ function setFeed(loca) {
 						pageUrl[j] = pageUrl[j].replace(/"/g, "");
 					}
 					
-					var goHereNext = encodeURI(BASEURL + "\/projects\/index.html?url=" + pageUrl + "&id=singlePost#singlePost");
+					var goHereNext = encodeURI("./index.html?url=" + pageUrl + "&id=singlePost#singlePost");
 					theHTml = theHTml + feedJSON2.posts[i].title_plain + "\"  href=\"" + goHereNext + "\" >" + feedJSON2.posts[i].title + "</a></h2><p>" + theExcerpt + "...</p></div></div><div class=\"clear\"></div>";
 					
 				}
@@ -34,9 +37,11 @@ function setFeed(loca) {
 				document.getElementById(idFeed).innerHTML = theHTml;				
 			}
 			catch (e) {
-				alert(e.message);	
+				
 			}
 		} 
 	});
+	
+	   
 }
 

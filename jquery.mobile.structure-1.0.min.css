@@ -153,8 +153,7 @@ body.ui-mobile-viewport, div.ui-mobile-viewport {
 	overflow: visible;
 	overflow-x: hidden;
 	padding: 15px;
-	background:#fff;
-}
+	}
 .ui-page-fullscreen .ui-content {
 	padding: 0
 }

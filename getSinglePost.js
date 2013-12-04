@@ -1,6 +1,8 @@
 function setStory(incUrl) {
 	var url = $.url(incUrl);
+		
 	var params = url.param("url") + "?json=1";
+	
 	var idstory= url.param("id") + "2";
 
 	var theHTml = "";
@@ -56,11 +58,6 @@ function setStory(incUrl) {
 					theImageUrl = "images/noPhoto.jpg";
 					theImageAlt = "No Photo";
 				}
-				theHTml = "<div class='breadcrumb'>\n<span><a rel=\"external\" href='" + BASEURL + "/category/newsfeed' >Newsfeed</a> > ";
-				if (storyObj.post.categories[0].parent) {
-					theHTml += "<a rel=\"external\"  href='" + BASEURL + "/category/" + theParentCategorySlug + "'>" + theParentCategory + "</a> >";	
-				} 
-				theHTml += "<a rel=\"external\"  href='" + BASEURL + "/category/" + theCategorySlug  + "'>" + theCategory + "</a></span>\n</div>";
 				theHTml += "<a rel=\"external\"  href='" + theUrl + "'><h2>" + theTitle + "</h2></a>\n";
 				theHTml += "<span class='author'>" + theAuthor + "</span><span class='date'>" + theDate + "</span>\n";
 				theHTml += "<img alt='" + theImageAlt + "' src='" + theImageUrl + "' class='postImage'/>\n";
