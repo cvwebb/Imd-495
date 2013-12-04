@@ -2,6 +2,7 @@ function getSubCategories(incUrl) {
 	var url = $.url(incUrl);
 	var parentCategory= url.param("parentID");
 	var idstory = url.param("id") + "2";
+	alert(idstory);
 	var categories = {};
 	var theHtml = "";
 	var urlz = BASEURL + "/api/get_category_index/";
@@ -17,7 +18,7 @@ function getSubCategories(incUrl) {
 				}
 			}
 			catch (e) {
-
+				alert(e.message);	
 			}
 		} 
 	});

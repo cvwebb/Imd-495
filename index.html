@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>jQuery Mobile Web App</title>
-    <link href="jquery.mobile.theme-1.0.min.css?654646" rel="stylesheet" type="text/css" />
-    <link href="jquery.mobile.structure-1.0.min.css?7654563" rel="stylesheet" type="text/css" />
-    <link href="styles.css?4654823" rel="stylesheet" type="text/css" />
+    <link href="jquery.mobile.theme-1.0.min.css?654654" rel="stylesheet" type="text/css" />
+    <link href="jquery.mobile.structure-1.0.min.css?6146545646" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
     <script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
     <script src="purl.js"></script>
@@ -18,21 +18,24 @@
 	<script src="feedGrab.js"></script>
     <script src="getCategory.js"></script>
 	<script src="getSinglePost.js"></script>
+	<script src="getSubCategories.js"></script>
     <link rel="apple-touch-icon-precomposed" href="/school/imd-495/app/home_icon_precomposed.png" />
     <script>
 		function init() {
-			setFeed('http://imd495.alexsablan.info/projects/index.html?url=http://imd495.alexsablan.info/category/newsfeed/?json=1&id=newsfeed');
-			setFeed('http://imd495.alexsablan.info/projects/index.html?url=http://imd495.alexsablan.info/category/activities?json=1&amp;id=activities#activities');
-			setFeed('http://imd495.alexsablan.info/projects/index.html?url=http://imd495.alexsablan.info/category/teachersblogs?json=1&amp;id=teachersblogs');
-			 setFeed('http://imd495.alexsablan.info/projects/index.html?url=http://imd495.alexsablan.info/category/clarkscorner?json=1&id=clarkscorner');
-			 setFeed('http://imd495.alexsablan.info/projects/index.html?url=http://imd495.alexsablan.info/category/schoolinfo?json=1&id=schoolinfo');
+			setFeed("http://imd495.alexsablan.info/projects/template.html?url=http://imd495.alexsablan.info/category/newsfeed/?json=1&id=newsfeed");
+
+			setFeed("http://imd495.alexsablan.info/projects/template.html?url=http://imd495.alexsablan.info/category/newsfeed/teachersblogs?json=1&id=teachersBlogs");
+			setFeed("http://imd495.alexsablan.info/projects/template.html?url=http://imd495.alexsablan.info/category/newsfeed/clarkscorner?json=1&id=clarkscorner");
+			setFeed("http://imd495.alexsablan.info/projects/template.html?url=http://imd495.alexsablan.info/category/newsfeed/schoolinfo?json=1&id=schoolinfo");
+			getSubCategories("http://imd495.alexsablan.info/projects/template.html?parentID=1&id=info");
 			if (url.attr('query') != "0") {
-				setStory(window.location);
+					setStory(window.location);
 			}
 			else
-				setStory("http://imd495.alexsablan.info/projects/index.html?url=http://imd495.alexsablan.info/french-club-eats-fries/&amp;id=singlePost");
+				setStory("http://imd495.alexsablan.info/projects/template.html?url=http://imd495.alexsablan.info/panther-weekly/&amp;id=singlePost");
 		}
 	</script>
+        <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="init();">
     <div data-role="page" id="home">
@@ -43,12 +46,12 @@
             </a>
             <div class="section">
                 <div class="fl pct-half">
-                    <a href="#activities">
+                    <a href="#info">
                         <img src="app-images/activities.png" />
                     </a>
                 </div>
                 <div class="fr pct-half">
-                    <a href="#teachersblogs">
+                    <a href="#teachersBlogs">
                         <img src="app-images/teachers2.png" /></a></div>
             </div>
             <div class="section">
@@ -81,7 +84,7 @@
                 <h1>Newsfeed</h1>
             </div>
             <div data-role="content">
-            	<div id="newsfeed2" class="contentbg">
+            	<div id="newsfeed2">
                 </div>
             </div>
         </div>
@@ -89,8 +92,8 @@
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
+                    <li><a href="#info" data-role="button" data-icon="activities">Activities</a></li>
+                    <li><a href="#teachersBlogs" data-role="button" data-icon="teachers">Teachers</a></li>
                     <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
                     <li><a href="#schoolinfo" data-role="button" data-icon="school">School</a></li>
                 </ul>
@@ -99,15 +102,15 @@
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="activities">
+    <div data-role="page" id="info">
         <div data-role="header">
             <h1>Activities</h1>
         </div>
         <div class="page-img">
-            <img src="app-images/activities-header.jpg"></div>
+            <img src="app-images/page-img.png"></div>
         <h1>Activites</h1>
         <div data-role="content">
-        	<div id="activities2" class="contentbg">
+        	<div id="info2">
 
             </div>
         </div>
@@ -115,8 +118,8 @@
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
+                    <li><a href="#info" data-role="button" data-icon="activities">Activities</a></li>
+                    <li><a href="#teachersBlogs" data-role="button" data-icon="teachers">Teachers</a></li>
                     <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
                     <li><a href="#schoolinfo" data-role="button" data-icon="school">School</a></li>
                 </ul>
@@ -132,19 +135,20 @@
                 Clark's Corner</h1>
         </div>
         <div class="page-img">
-            <img src="app-images/clarks-header.jpg"></div>
+            <img src="app-images/page-img.png"></div>
         <h1>
-            Clark's Corner</h1>
+            Welcome to Principal Clark's Page</h1>
         <div data-role="content">
-        	<div class="contentbg" id="clarkscorner2">
+        	<div id="clarkscorner2">
+
             </div>
         </div>
         <div data-role="footer" data-id="foo1" data-position="fixed">
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
+                    <li><a href="#info" data-role="button" data-icon="activities">Activities</a></li>
+                    <li><a href="#teachersBlogs" data-role="button" data-icon="teachers">Teachers</a></li>
                     <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
                     <li><a href="#schoolinfo" data-role="button" data-icon="school">School</a></li>
                 </ul>
@@ -153,16 +157,15 @@
         </div>
         <!-- /footer -->
     </div>
-    <div data-role="page" id="teachersblogs">
+    <div data-role="page" id="teachersBlogs">
         <div data-role="header">
             <h1>Teacher's Blogs</h1>
         </div>
         <div class="page-img">
-            <img src="app-images/teachers-header.jpg">
-        </div>
+            <img src="app-images/page-img.png"></div>
         <h1>Teacher's Blog</h1>
         <div data-role="content">
-        	<div class="contentbg" id="teachersblogs2">
+        	<div id="teachersBlogs2">
   
             </div>
         </div>
@@ -170,8 +173,8 @@
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
+                    <li><a href="#info" data-role="button" data-icon="activities">Activities</a></li>
+                    <li><a href="#teachersBlogs" data-role="button" data-icon="teachers">Teachers</a></li>
                     <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
                     <li><a href="#schoolinfo" data-role="button" data-icon="school">School</a></li>
                 </ul>
@@ -182,10 +185,10 @@
     </div>
     <div data-role="page" id="singlePost">
         <div data-role="header">
-            <h1>Your Story</h1>
+            <h1>Your Selected Story</h1>
         </div>
         <div data-role="content">
-        	<div class="contentbg" id="singlePost2">
+        	<div id="singlePost2">
 
             </div>
         </div>
@@ -193,8 +196,8 @@
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
+                    <li><a href="#info" data-role="button" data-icon="activities">Activities</a></li>
+                    <li><a href="#teachersBlogs" data-role="button" data-icon="teachers">Teachers</a></li>
                     <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
                     <li><a href="#schoolinfo" data-role="button" data-icon="school">School</a></li>
                 </ul>
@@ -203,15 +206,16 @@
         </div>
         <!-- /footer -->
     </div>
+    
     <div data-role="page" id="schoolinfo">
         <div data-role="header">
-            <h1>School Info</h1>
+            <h1>
+                School Info</h1>
         </div>
-        <div class="page-img">
-            <img src="app-images/school-header.jpg"></div>
-        <h1>School Info</h1>
+        <h1>
+            Teachers</h1>
         <div data-role="content">
-        <div class="contentbg" id="schoolinfo2">
+        <div id="schoolinfo2">
 
             </div>
         </div>
@@ -219,8 +223,8 @@
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
+                    <li><a href="#info" data-role="button" data-icon="activities">Activities</a></li>
+                    <li><a href="#teachersBlogs" data-role="button" data-icon="teachers">Teachers</a></li>
                     <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
                     <li><a href="#schoolinfo" data-role="button" data-icon="school">School</a></li>
                 </ul>
@@ -228,14 +232,13 @@
             <!-- /navbar -->
         </div>
         <!-- /footer -->
-    </div>    
- 
+    </div>
     <div data-role="page" id="submit">
         <div data-role="header">
             <h1>Submit Article</h1>
         </div>
         <div data-role="content">
-        	<div id="submit2" class="contentbg">
+        	<div id="submit2">
             	<form action="" method="put" id="articleSubmit">
                 
             		<div>
@@ -253,31 +256,17 @@
                      	<textarea id="postBody" name="postBody"></textarea>
                      </div>
                      <div>
-                     	<input type="file" capture="camera" accept="image/*" id="cameraInput">
-                        <!--<a href="camera"><img src="" alt="camera"/></a>
+                     	<a href="camera"><img src="" alt="camera"/></a>
                         <a href="camera"><img src="" alt="camera"/></a>
                         <a href="camera"><img src="" alt="camera"/></a>
                         <a href="camera"><img src="" alt="camera"/></a>
                         <a href="camera"><img src="" alt="camera"/></a>
-                        <a href="camera"><img src="" alt="camera"/></a>-->
+                        <a href="camera"><img src="" alt="camera"/></a>
+                        <a href="camera"><img src="" alt="camera"/></a>
                      </div>
            		</form>
             </div>
         </div>
-        <div data-role="footer" data-id="foo1" data-position="fixed">
-            <div data-role="navbar" data-iconpos="top">
-                <ul>
-                    <li><a href="#home" data-role="button" data-icon="home-app">Home</a></li>
-                    <li><a href="#activities" data-role="button" data-icon="activities">Activities</a></li>
-                    <li><a href="#teachersblogs" data-role="button" data-icon="teachers">Teachers</a></li>
-                    <li><a href="#clarkscorner" data-role="button" data-icon="principal">Principal</a></li>
-                    <li><a href="#schoolinfo' data-role="button" data-icon="school">School</a></li>
-                </ul>
-            </div>
-            <!-- /navbar -->
-        </div>
-        <!-- /footer -->
-    </div>
     </div>    
 </body>
 </html>
