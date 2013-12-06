@@ -13,7 +13,9 @@
     <script src="purl.js"></script>
     <script>
 	var url = purl(window.location);
-	var BASEURL = "http:\/\/imd495.alexsablan.info";
+	var BASEURL = "http:\/\/plsdinfo-lakeview.pickerington.k12.oh.us/lakeview/wordpress";
+/*	var BASEURL = "http:\/\/imd495.alexsablan.info";
+*/
 	</script>
 	<script src="feedGrab.js"></script>
     <script src="getCategory.js"></script>
@@ -21,16 +23,16 @@
     <link rel="apple-touch-icon-precomposed" href="/school/imd-495/app/home_icon_precomposed.png" />
     <script>
 		function init() {
-			setFeed('./index.html?url=http://imd495.alexsablan.info/category/newsfeed/?json=1&id=newsfeed');
-			setFeed('./index.html?url=http://imd495.alexsablan.info/category/activities?json=1&amp;id=activities#activities');
-			setFeed('./index.html?url=http://imd495.alexsablan.info/category/teachersblogs?json=1&amp;id=teachersblogs');
-			 setFeed('./index.html?url=http://imd495.alexsablan.info/category/clarkscorner?json=1&id=clarkscorner');
-			 setFeed('./index.html?url=http://imd495.alexsablan.info/category/schoolinfo?json=1&id=schoolinfo');
+			setFeed('./index.html?url=' + BASEURL+ '/category/newsfeed/?json=1&id=newsfeed');
+			setFeed('./index.html?url=' + BASEURL+ '/category/activities?json=1&amp;id=activities#activities');
+			setFeed('./index.html?url=' + BASEURL+ '/category/teachersblogs?json=1&amp;id=teachersblogs');
+			setFeed('./index.html?url=' + BASEURL+ '/category/clarkscorner?json=1&id=clarkscorner');
+			setFeed('./index.html?url=' + BASEURL+ '/category/schoolinfo?json=1&id=schoolinfo');
 			if (url.attr('query') != "0") {
 				setStory(window.location);
 			}
 			else
-				setStory("./index.html?url=http://imd495.alexsablan.info/french-club-eats-fries/&amp;id=singlePost");
+				setStory("./index.html?url="+BASEURL+ "/french-club-eats-fries/&amp;id=singlePost");
 		}
 	</script>
 </head>
@@ -229,7 +231,10 @@
         </div>
         <!-- /footer -->
     </div>    
- 
+     <div data-role="page" id="category">
+
+    </div>    
+
     <div data-role="page" id="submit">
         <div data-role="header">
             <h1>Submit Article</h1>
