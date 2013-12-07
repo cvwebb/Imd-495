@@ -13,9 +13,8 @@
     <script src="purl.js"></script>
     <script>
 	var url = purl(window.location);
-	var BASEURL = "http:\/\/plsdinfo-lakeview.pickerington.k12.oh.us/lakeview/wordpress";
-/*	var BASEURL = "http:\/\/imd495.alexsablan.info";
-*/
+	/*var BASEURL = "http:\/\/plsdinfo-lakeview.pickerington.k12.oh.us/lakeview/wordpress";*/
+var BASEURL = "http:\/\/imd495.alexsablan.info";
 	</script>
 	<script src="feedGrab.js"></script>
     <script src="getCategory.js"></script>
@@ -241,24 +240,17 @@
         </div>
         <div data-role="content">
         	<div id="submit2" class="contentbg">
-            	<form action="" method="put" id="articleSubmit">
-                
-            		<div>
-                    	<input type="button" value="Save Draft" id="saveDraft" name="saveDraft"/>
-                        <input type="submit" value="Publish" id="publish" name="publish"/>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Post Title" id="postTitle" name="postTitle"/>
-                        <input type="text" placeholder="Category" id="category" name="category" />
-                    	<span>Click to share</span>
-                        <a href="url to share on facebook" title="Share on Facebook"><img src="" alt="Share on Facebook" /></a>
-                    	<a href="url to share on twitter" title="Share on Twitter"><img src="" alt="Share on Twitter" /></a>
+            	<form method='post' action='http://imd495.alexsablan.info/projects/send.php'>
+  Post Title: <input name='subject' type='text'><br>
+  Post Content:<br>
+  <textarea name='message' rows='15' cols='40'>
+  </textarea><br>
+  <input type="file" name='photo' capture="camera" accept="image/*" id="cameraInput"><br>
+  <input type='submit' value="Send">
+  </form>
                      </div>
                      <div>
-                     	<textarea id="postBody" name="postBody"></textarea>
-                     </div>
-                     <div>
-                     	<input type="file" capture="camera" accept="image/*" id="cameraInput">
+                     	
                         <!--<a href="camera"><img src="" alt="camera"/></a>
                         <a href="camera"><img src="" alt="camera"/></a>
                         <a href="camera"><img src="" alt="camera"/></a>
