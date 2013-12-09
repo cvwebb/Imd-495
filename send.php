@@ -2,7 +2,7 @@
   $subject = $_REQUEST['subject'] ;
   $message = $_REQUEST['photo'] ;
   $message = "[status pending]" . $_REQUEST['message'] ;
-  mail("wole840foqo@post.wordpress.com", $subject,
+  mail("buri403puhe@post.wordpress.com", $subject,
   $message, "From:" . $email);
   $messageBody = "Thank you for using our mail form";
 ?>
@@ -14,16 +14,16 @@
 </head>
 <body onload="redirectForm();">
 <h2><?php echo($messageBody); ?></h2>
-<p><a href="http://imd495.alexsablan.info/projects/index.html">If not redirected click here.</a></p>
-<form id="thisForm" name="thisForm" action="http://imd495.alexsablan.info/projects/index.html" method="get">
+<p><a href="./index.html">If not redirected click here.</a></p>
+<form id="thisForm" name="thisForm" action="./index.html" method="get">
 </form>
 <script>
 function redirectForm() {
 	document.getElementById("thisForm").submit();
-	window.location.assign("http://imd495.alexsablan.info/projects/index.html");
+	window.location.assign("./index.html");
 }
 $(document).ready( function() {
-	$.mobile.changePage("http://imd495.alexsablan.info/projects/index.html");
+	$.mobile.changePage("./index.html");
 });
 </script>
 </body>

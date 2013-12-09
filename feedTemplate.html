@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Feed Template</title>
+<script src="jquery-1.6.4.min.js"></script>
+<script src="TESTJSON.js"></script>
+<script>
+function setFeed() {
+	var theHTml = "";
+	var theExcerpt = "";
+	/*
+	var xmlhttp=new XMLHttpRequest();
+	var ourUrl = "http://imd495.alexsablan.info/category/newsfeed/teachersblogs/mrswhite/?json=1";
+	var feedJSON2 = "";
+
+	try{
+		$.getJSON(ourUrl, function(data){ feedJSON2 = data; });
+	}
+	catch(e) {
+		alert(e.message);
+	}
+
+	alert(feedJSON2.posts[0].id);
+	for (var i=0;i < feedJSON2.posts.length; i++) {
+		*/
+	for (var i=0;i < feedJSON.posts.length; i++) {
+		try {
+			theHTml += "<div class='subCategory'><div class='thumbnailImage'><img src='" + feedJSON.posts[i].attachments[0].images.thumbnail.url + "'/></div>";
+		}
+		catch (e) {
+			theHTml += "<div class='subCategory'><div class='thumbnailImage'><img src='images/noPhoto.jpg''alt='no photo'/></div>";
+		}
+		theExcerpt = feedJSON.posts[i].excerpt.substring(0,150);
+		theHTml += "<div class='thePostSnippet'><h2><a href='"+ feedJSON.posts[i].url + "?json=1'" + "&nbsp;title='"+feedJSON.posts[i].title_plain + "'>" + feedJSON.posts[i].title + "</a></h2><p>" + theExcerpt + "...</p></div></div><div class='clear'></div>";
+	}
+	document.getElementById("feed").innerHTML=theHTml;
+
+}
+
+</script>
+</head>
+
+<body onload="setFeed();">
+<div id="feed">
+</div>
+<div id="results"></div>
+</body>
+</html>
